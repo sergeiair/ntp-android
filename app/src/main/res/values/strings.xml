@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NoTouchPass</string>
+    <string name="title_home">Rate</string>
+    <string name="title_dashboard">Fixtures</string>
+    <string name="title_notifications">Customize</string>
+
+    <string name="title_vs">VS</string>
+    <string name="title_activity_initial">Who are the rivals?</string>
+
+    <string name="input_team1">First team</string>
+    <string name="input_team2">Second team</string>
+
+    <string name="buttons_search">Search</string>
+
+    <string name="teams_prediction_query">{\"query\":\"{teamsPrediction(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\") {rate}}\",\"variables\":null,\"operationName\":null}</string>
+
+</resources>
