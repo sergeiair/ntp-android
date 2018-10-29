@@ -1,7 +1,6 @@
 package com.sz.notouchpass.initial;
 
 import android.content.res.Resources;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,42 +8,37 @@ import com.sz.notouchpass.R;
 import com.sz.notouchpass.initial.interfaces.InitialView;
 import com.sz.notouchpass.initial.interfaces.Interactor;
 import com.sz.notouchpass.initial.interfaces.Presenter;
+import com.sz.notouchpass.parcelable.TeamsPrediction;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-
 
 public class InitialPresenter implements
         Presenter,
         Interactor.OnGetPredictionFinishedListener,
         View.OnClickListener {
 
-    private InitialView initialView;
+    private InitialView view;
     private Interactor initialnteractor;
     private Resources resources;
     private EditText team1;
     private EditText team2;
     private Button predictionBtn;
 
-    public InitialPresenter(InitialView initialView, Interactor initialnteractor) {
-        this.initialView = initialView;
+    public InitialPresenter(InitialView view, Interactor initialnteractor) {
+        this.view = view;
         this.initialnteractor = initialnteractor;
-        this.resources = initialView.getResources();
+        this.resources = view.getResources();
 
-        team1 = ((InitialActivity) initialView).findViewById(R.id.inputTeam1);
-        team2 = ((InitialActivity) initialView).findViewById(R.id.inputTeam2);
-        predictionBtn = ((InitialActivity) initialView).findViewById(R.id.btnGetPrediction);
+        team1 = ((InitialActivity) view).findViewById(R.id.inputTeam1);
+        team2 = ((InitialActivity) view).findViewById(R.id.inputTeam2);
+        predictionBtn = ((InitialActivity) view).findViewById(R.id.btnGetPrediction);
 
         predictionBtn.setOnClickListener(this);
     }
 
-    public void getPrediction() {
-        String querySting = String.format(
-            resources.getString(R.string.teams_prediction_query),
-            team1.getText(),
-            team2.getText()
-        );
-
-        initialnteractor.request(querySting, this);
+    public void fetchPrediction() {
+        initialnteractor.request(getQueryString(), this);
     }
 
     public void clearDisposables() {
@@ -52,7 +46,9 @@ public class InitialPresenter implements
     }
 
     @Override
-    public void onRequestError(Throwable throwable) {}
+    public void onRequestError(Throwable throwable) {
+        predictionBtn.setVisibility(View.VISIBLE);
+    }
 
     @Override
     public void onRequestSuccess(String response) {
@@ -61,18 +57,27 @@ public class InitialPresenter implements
 
             String team1Name = team1.getText().toString();
             String team2Name = team2.getText().toString();
-            String rate = responseData
+            String rates = responseData
                 .getJSONObject("teamsPrediction")
-                .get("rate")
+                .get("rates")
                 .toString();
 
-            initialView.toMainActivity(team1Name, team2Name, rate);
+            view.toRivalryActivity(new TeamsPrediction(team1Name, team2Name, rates));
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    @Override public void onClick(View v) {
-        getPrediction();
+    @Override
+    public void onClick(View v) {
+        fetchPrediction();
+    }
+
+    public String getQueryString () {
+        return String.format(
+            resources.getString(R.string.teams_prediction_query),
+            team1.getText(),
+            team2.getText()
+        );
     }
 }

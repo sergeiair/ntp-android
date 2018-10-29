@@ -2,11 +2,11 @@ package com.sz.notouchpass.initial;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
-import com.sz.notouchpass.MainActivity;
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.initial.interfaces.InitialView;
-
+import com.sz.notouchpass.rivalry.RivalryActivity;
 
 public class InitialActivity extends AppCompatActivity implements InitialView {
 
@@ -21,11 +21,9 @@ public class InitialActivity extends AppCompatActivity implements InitialView {
     }
 
     @Override
-    public void toMainActivity(String team1, String team2, String rate) {
-        Intent intent = new Intent(InitialActivity.this, MainActivity.class);
-        intent.putExtra("team1", team1);
-        intent.putExtra("team2", team2);
-        intent.putExtra("rate", rate);
+    public void toRivalryActivity(Parcelable teamsPrediction) {
+        Intent intent = new Intent(InitialActivity.this, RivalryActivity.class);
+        intent.putExtra("TeamsPrediction", teamsPrediction);
 
         startActivity(intent);
     }

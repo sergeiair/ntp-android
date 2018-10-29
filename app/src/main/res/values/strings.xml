@@ -6,12 +6,18 @@
 
     <string name="title_vs">VS</string>
     <string name="title_activity_initial">Who are the rivals?</string>
+    <string name="title_activity_rivalry">RivalryActivity</string>
 
     <string name="input_team1">First team</string>
     <string name="input_team2">Second team</string>
 
     <string name="buttons_search">Search</string>
 
-    <string name="teams_prediction_query">{\"query\":\"{teamsPrediction(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\") {rate}}\",\"variables\":null,\"operationName\":null}</string>
-
+    <string name="teams_prediction_query">
+        {\"query\":\"{teamsPrediction(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\") {rates}}\",\"variables\":null,\"operationName\":null}
+    </string>
+    <string name="teams_fixtures_query">
+        {\"query\":\"{teamsFixtures(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\")
+        {stadium, schedule_date, number_goal_team_home, number_goal_team_away, referee_name, id_country}}\",\"variables\":null,\"operationName\":null}
+    </string>
 </resources>
