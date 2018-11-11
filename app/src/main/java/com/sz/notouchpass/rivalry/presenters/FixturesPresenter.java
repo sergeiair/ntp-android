@@ -10,7 +10,6 @@ import android.view.View;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.parcelable.TeamsPrediction;
 import com.sz.notouchpass.rivalry.fragments.FixturesRecyclerViewAdapter;
@@ -38,7 +37,7 @@ public class FixturesPresenter implements
         try {
             initRecyclerView();
         } catch (Exception e) {
-            Log.e("FixturesPresenter", e.getMessage());
+            Log.e("InitFixturesView", e.getMessage());
         }
     }
 
@@ -61,9 +60,10 @@ public class FixturesPresenter implements
                 .getJSONArray("teamsFixtures");
 
             Fixtures.addItems(fixturesArray);
-            notifyAdapter();
         } catch (JSONException e) {
             Log.e("FixturesResponse", e.getMessage());
+        } finally {
+            notifyAdapter();
         }
     }
 
@@ -90,18 +90,12 @@ public class FixturesPresenter implements
     }
 
     public void initRecyclerView() {
-        if (fragmentView instanceof RecyclerView) {
-            Context context = fragmentView.getContext();
-            recyclerView = (RecyclerView) fragmentView;
+        Context context = fragmentView.getContext();
 
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(
-                new LinearLayoutManager(context)
-            );
-            recyclerView.setAdapter(
-                 new FixturesRecyclerViewAdapter(Fixtures.itemsList)
-            );
-        }
+        recyclerView = (RecyclerView) fragmentView;
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setAdapter(new FixturesRecyclerViewAdapter(Fixtures.itemsList));
     }
 
 }

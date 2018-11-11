@@ -62,7 +62,7 @@ public class RivalryActivity extends FragmentActivity implements
         setContentView(R.layout.activity_rivalry);
 
         Intent intent = getIntent();
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         extrasBd = intent.getExtras();

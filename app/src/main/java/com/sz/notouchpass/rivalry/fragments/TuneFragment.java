@@ -26,19 +26,21 @@ public class TuneFragment extends Fragment {
             View view = inflater.inflate(R.layout.fragment_tune, container, false);
             mListener.onTuneFragmentViewCreated(view);
 
-            return inflater.inflate(R.layout.fragment_tune, container, false);
+            return view;
     }
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                 + " must implement OnFragmentInteractionListener");
         }
+
     }
 
     @Override

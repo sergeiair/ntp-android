@@ -21,8 +21,8 @@ public class InitialPresenter implements
     private InitialView view;
     private Interactor initialnteractor;
     private Resources resources;
-    private EditText team1;
-    private EditText team2;
+    private EditText team1Input;
+    private EditText team2Input;
     private Button predictionBtn;
 
     public InitialPresenter(InitialView view, Interactor initialnteractor) {
@@ -30,8 +30,8 @@ public class InitialPresenter implements
         this.initialnteractor = initialnteractor;
         this.resources = view.getResources();
 
-        team1 = ((InitialActivity) view).findViewById(R.id.inputTeam1);
-        team2 = ((InitialActivity) view).findViewById(R.id.inputTeam2);
+        team1Input = ((InitialActivity) view).findViewById(R.id.inputTeam1);
+        team2Input = ((InitialActivity) view).findViewById(R.id.inputTeam2);
         predictionBtn = ((InitialActivity) view).findViewById(R.id.btnGetPrediction);
 
         predictionBtn.setOnClickListener(this);
@@ -55,8 +55,8 @@ public class InitialPresenter implements
         try {
             JSONObject responseData = new JSONObject(response).getJSONObject("data");
 
-            String team1Name = team1.getText().toString();
-            String team2Name = team2.getText().toString();
+            String team1Name = team1Input.getText().toString();
+            String team2Name = team2Input.getText().toString();
             String rates = responseData
                 .getJSONObject("teamsPrediction")
                 .get("rates")
@@ -76,8 +76,8 @@ public class InitialPresenter implements
     public String getQueryString () {
         return String.format(
             resources.getString(R.string.teams_prediction_query),
-            team1.getText(),
-            team2.getText()
+            team1Input.getText(),
+            team2Input.getText()
         );
     }
 }
