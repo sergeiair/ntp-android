@@ -22,14 +22,15 @@ public class PieChartBuilder {
     private final PieChart mChart;;
     private final PieDataSet dataSet;
 
-    public PieChartBuilder(PieChart chartView, ArrayList<PieEntry> entries) {
-        mChart = chartView;
+    public PieChartBuilder
+        (PieChart chartView, ArrayList<PieEntry> entries, ArrayList<Integer> colors) {
+            mChart = chartView;
 
-        mChart.setUsePercentValues(true);
-        mChart.getDescription().setEnabled(false);
+            mChart.setUsePercentValues(true);
+            mChart.getDescription().setEnabled(false);
 
-        dataSet = new PieDataSet(entries, "");
-        dataSet.setColors(getDefaultColors());
+            dataSet = new PieDataSet(entries, "");
+            dataSet.setColors(colors);
     }
 
     public PieChartBuilder setText(String text, float size, int color) {
@@ -82,15 +83,6 @@ public class PieChartBuilder {
     public void complete() {
         mChart.highlightValues(null);
         mChart.invalidate();
-    }
-
-    private ArrayList<Integer> getDefaultColors() {
-        ArrayList<Integer> colors = new ArrayList<Integer>();
-
-        for (int c : ColorTemplate.COLORFUL_COLORS)
-            colors.add(c);
-
-        return colors;
     }
 
     private SpannableString getSpannableText(String text, float size, int color) {

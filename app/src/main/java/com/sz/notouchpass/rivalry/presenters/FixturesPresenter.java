@@ -27,12 +27,14 @@ public class FixturesPresenter implements
     private FixturesInteractor fixturesInteractor;
     private Resources resources;
     private Bundle extras;
+    private RecyclerView list;
 
     public FixturesPresenter(FixturesInteractor interactor, View view, Bundle extras) {
         this.fragmentView = view;
         this.fixturesInteractor = interactor;
         this.extras = extras;
         this.resources = view.getResources();
+        this.list = this.fragmentView.findViewById(R.id.list);
 
         try {
             initRecyclerView();

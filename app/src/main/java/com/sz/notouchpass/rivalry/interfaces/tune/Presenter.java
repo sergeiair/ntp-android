@@ -20,5 +20,9 @@ public interface Presenter {
 
     void setEvents();
 
+    String getQueryString();
+
+    String getRatesQueryPart();
+
     TeamsTuneParams.TuneParams getTuneParams();
 }

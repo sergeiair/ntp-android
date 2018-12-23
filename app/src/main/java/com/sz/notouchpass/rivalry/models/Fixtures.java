@@ -31,6 +31,8 @@ public class Fixtures {
         public String scheduleDate;
         public String numberGoalTeamHome;
         public String numberGoalTeamAway;
+        public String teamSeasonHomeName;
+        public String teamSeasonAwayName;
         public String refereeName;
         public String idCountry;
 
@@ -40,6 +42,8 @@ public class Fixtures {
                 scheduleDate = data.getString("schedule_date");
                 numberGoalTeamHome = data.getString("number_goal_team_home");
                 numberGoalTeamAway = data.getString("number_goal_team_away");
+                teamSeasonHomeName = data.getString("team_season_home_name");
+                teamSeasonAwayName = data.getString("team_season_away_name");
                 refereeName = data.getString("referee_name");
                 idCountry = data.getString("id_country");
             } catch (JSONException e) {
@@ -47,6 +51,8 @@ public class Fixtures {
                 scheduleDate = "";
                 numberGoalTeamHome = "";
                 numberGoalTeamAway = "";
+                teamSeasonHomeName = "";
+                teamSeasonAwayName = "";
                 refereeName = "";
                 idCountry = "";
             }

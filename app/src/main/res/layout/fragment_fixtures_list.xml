@@ -6,8 +6,8 @@
     android:name="com.sz.notouchpass.rivalry.fragments.FixturesFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     android:scrollbars="none"
+    android:background="@color/colorLightestGrey"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.sz.notouchpass.rivalry.fragments.FixturesFragment" />
+    tools:context="com.sz.notouchpass.rivalry.fragments.FixturesFragment" >
+</android.support.v7.widget.RecyclerView>

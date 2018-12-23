@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.rivalry.fragments.FixturesFragment;
 import com.sz.notouchpass.rivalry.fragments.PredictionFragment;
 import com.sz.notouchpass.rivalry.fragments.TuneFragment;
 import com.sz.notouchpass.rivalry.interactors.FixturesInteractor;
 import com.sz.notouchpass.rivalry.interactors.PredictionInteractor;
+import com.sz.notouchpass.rivalry.interactors.TuneInteractor;
 import com.sz.notouchpass.rivalry.interfaces.activity.RivalryView;
 import com.sz.notouchpass.rivalry.presenters.FixturesPresenter;
 import com.sz.notouchpass.rivalry.presenters.PredictionPresenter;
@@ -50,7 +51,7 @@ public class RivalryActivity extends FragmentActivity implements
                 case R.id.navigation_notifications:
                     setFragment(new TuneFragment());
 
-                    return false;
+                    return true;
             }
             return false;
         }
@@ -75,9 +76,16 @@ public class RivalryActivity extends FragmentActivity implements
     @Override
     public void onPredictionFragmentViewCreated(View view) {
         predictionPresenter = new PredictionPresenter (
-            new PredictionInteractor(),
             view,
             extrasBd
+        );
+    }
+
+    @Override
+    public void onTunedPredictionFragmentViewCreated(View view, Bundle arguments) {
+        predictionPresenter = new PredictionPresenter (
+            view,
+            arguments
         );
     }
 
@@ -96,7 +104,8 @@ public class RivalryActivity extends FragmentActivity implements
     public void onTuneFragmentViewCreated(View view) {
         tunePresenter = new TunePresenter (
             view,
-            extrasBd
+            extrasBd,
+            new TuneInteractor()
         );
     }
 
@@ -104,5 +113,12 @@ public class RivalryActivity extends FragmentActivity implements
         fm.beginTransaction()
             .replace(R.id.fragmentContent, fragment)
             .commit();
+    }
+
+    public void setPredictionFragment(Bundle teamsPredictionBundle) {
+        Fragment predictionFragment = new PredictionFragment();
+
+        predictionFragment.setArguments(teamsPredictionBundle);
+        setFragment(predictionFragment);
     }
 }

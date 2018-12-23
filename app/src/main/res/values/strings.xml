@@ -1,29 +1,32 @@
 <resources>
     <string name="app_name">NoTouchPass</string>
-    <string name="title_home">Rate</string>
+    <string name="title_home">Prediction</string>
     <string name="title_dashboard">Fixtures</string>
     <string name="title_notifications">Customize</string>
     <string name="title_vs">VS</string>
     <string name="title_activity_initial">Who are the rivals?</string>
     <string name="title_activity_rivalry">RivalryActivity</string>
     <string name="title_select_team">Select team</string>
-    <string name="title_fan_of_team">I`m a fan on this team</string>
+    <string name="title_new_coach">New coach to join recently</string>
     <string name="title_bookmakers_win">Bookmakers put on win</string>
     <string name="title_key_players_injured">Key players injured</string>
     <string name="title_team_motivation">Team motivation</string>
     <string name="title_key_strikers_form">Key strikers form</string>
 
-    <string name="input_team1">First team</string>
-    <string name="input_team2">Second team</string>
+    <string name="input_team1">Home team</string>
+    <string name="input_team2">Away team</string>
 
     <string name="buttons_search">Search</string>
-    <string name="buttons_calculate">Calculate rates</string>
+    <string name="buttons_calculate">Recalculate</string>
 
     <string name="teams_prediction_query">
         {\"query\":\"{teamsPrediction(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\") {rates}}\",\"variables\":null,\"operationName\":null}
     </string>
     <string name="teams_fixtures_query">
         {\"query\":\"{teamsFixtures(team1: \\\"%1$s\\\", team2: \\\"%2$s\\\")
-        {stadium, schedule_date, number_goal_team_home, number_goal_team_away, referee_name, id_country}}\",\"variables\":null,\"operationName\":null}
+        {stadium, schedule_date, team_season_home_name, team_season_away_name, number_goal_team_home, number_goal_team_away, referee_name, id_country}}\", \"variables\":null,\"operationName\":null}
+    </string>
+    <string name="teams_prediction_tune_query">
+        {\"query\":\"{predictionTune(%1$s) {rates}}\",\"variables\":null,\"operationName\":null}
     </string>
 </resources>

@@ -4,75 +4,57 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightestGrey"
     tools:context="com.sz.notouchpass.rivalry.fragments.TuneFragment">
 
     <TextView
         android:id="@+id/teamsLabel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/mid_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:text="@string/title_select_team"
         android:textAlignment="center"
+        android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ToggleButton
-        android:id="@+id/teamToggle"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginEnd="@dimen/small_margin"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamsLabel" />
 
     <View
         android:id="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/mid_margin"
-        android:background="?android:attr/listDivider"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:background="@color/colorPie2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamToggle" />
+        app:layout_constraintTop_toBottomOf="@+id/teamsLabel" />
 
-    <Switch
-        android:id="@+id/bookmakersWin"
+    <ToggleButton
+        android:id="@+id/teamToggle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mid_margin"
-        android:layout_marginTop="@dimen/big_margin"
-        android:layout_marginEnd="@dimen/mid_margin"
-        android:text="@string/title_bookmakers_win"
+        android:layout_height="45dp"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider1" />
-
-    <Switch
-        android:id="@+id/meIsFan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mid_margin"
-        android:layout_marginTop="@dimen/big_margin"
-        android:layout_marginEnd="@dimen/mid_margin"
-        android:text="@string/title_fan_of_team"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookmakersWin" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/big_margin"
-        android:background="?android:attr/listDivider"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/meIsFan" />
+        app:layout_constraintTop_toBottomOf="@+id/teamToggle" />
 
     <TextView
         android:id="@+id/missingPlayersLabel"
@@ -83,13 +65,13 @@
         android:layout_marginEnd="@dimen/small_margin"
         android:text="@string/title_key_players_injured"
         android:textAlignment="center"
+        android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <SeekBar
         android:id="@+id/injureBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_margin"
@@ -109,13 +91,13 @@
         android:layout_marginEnd="@dimen/small_margin"
         android:text="@string/title_team_motivation"
         android:textAlignment="center"
+        android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/injureBar" />
 
     <SeekBar
         android:id="@+id/motivationBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_margin"
@@ -135,33 +117,77 @@
         android:layout_marginEnd="@dimen/small_margin"
         android:text="@string/title_key_strikers_form"
         android:textAlignment="center"
+        android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/motivationBar" />
 
     <SeekBar
         android:id="@+id/strikersBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:max="10"
+        android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strikersLabel" />
 
-    <Button
-        android:id="@+id/requestBtn"
-        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/big_margin"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:text="@string/buttons_calculate"
+    <Switch
+        android:id="@+id/bookmakersWin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/huge_margin"
+        android:layout_marginEnd="@dimen/mid_margin"
+        android:textColor="@color/colorPie3"
+        android:text="@string/title_bookmakers_win"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strikersBar" />
+
+    <Switch
+        android:id="@+id/newCoach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/huge_margin"
+        android:textColor="@color/colorPie3"
+        android:text="@string/title_new_coach"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookmakersWin" />
+
+    <Button
+        android:id="@+id/requestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/button_rounded_accent"
+        android:elevation="4dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/buttons_calculate"
+        android:textColor="@color/colorLightest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newCoach" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mid_margin"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorAccent"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newCoach" />
 </android.support.constraint.ConstraintLayout>

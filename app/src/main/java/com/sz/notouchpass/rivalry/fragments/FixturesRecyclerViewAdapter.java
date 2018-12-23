@@ -44,12 +44,18 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
             String stadiumName = mValues.get(position).stadium;
             String stadiumImageName = stadiumName.replace(" ", "").toLowerCase();
             String imagePath = "android.resource://com.sz.notouchpass/drawable/";
-            String score = mValues.get(position).numberGoalTeamHome + ":" + mValues.get(position).numberGoalTeamAway;
+            String formattedDate = new SimpleDateFormat("yyyy-MMM-dd", Locale.ENGLISH)
+                .format(parsedDate)
+                .replace("-", "\n\r");
+            String team1 = mValues.get(position).teamSeasonHomeName + " " +
+                mValues.get(position).numberGoalTeamHome;
+            String team2 = mValues.get(position).numberGoalTeamAway + " " +
+                mValues.get(position).teamSeasonAwayName;
 
             holder.mStadImageView.setImageURI(Uri.parse(imagePath + stadiumImageName));
-            holder.mDateView.setText(DateFormat.getDateInstance().format(parsedDate));
+            holder.mDateView.setText(formattedDate);
             holder.mStadNameView.setText(stadiumName);
-            holder.mScoreView.setText(score);
+            holder.mTeamsView.setText(team1 + " : " + team2);
         } catch (Exception e) {
             Log.e("SetFixtureContent", e.getMessage());
         }
@@ -62,9 +68,9 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+        public final TextView mTeamsView;
         public final TextView mDateView;
         public final TextView mStadNameView;
-        public final TextView mScoreView;
         public final ImageView mStadImageView;
         public FixtureItem mItem;
 
@@ -74,7 +80,7 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
             mDateView = view.findViewById(R.id.date);
             mStadNameView = view.findViewById(R.id.stadName);
             mStadImageView = view.findViewById(R.id.stadImage);
-            mScoreView = view.findViewById(R.id.score);
+            mTeamsView = view.findViewById(R.id.teams);
         }
 
         @Override

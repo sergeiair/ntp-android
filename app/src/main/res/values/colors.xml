@@ -2,6 +2,16 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorYellow">#ebd912</color>
+    <color name="colorYellowTransparent">#3cebd912</color>
+    <color name="colorAccent">#F6511D</color>
+    <color name="colorAccentTransparent">#84f6511d</color>
     <color name="colorLightest">#FFFFFF</color>
+    <color name="colorLightestTransparent">#72ffffff</color>
+    <color name="colorLightestGrey">#f9f5f5</color>
+    <color name="colorGhost">#f5f0f0</color>
+    <color name="colorPie1">#E49273</color>
+    <color name="colorPie2">#A37A74</color>
+    <color name="colorPie3">#5C4642</color>
+    <color name="colorPie4">#E6AA68</color>
 </resources>

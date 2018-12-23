@@ -3,18 +3,14 @@ package com.sz.notouchpass.rivalry.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.rivalry.models.Fixtures;
 
 public class FixturesFragment extends Fragment {
 
-    public RecyclerView recyclerView;
     public OnListFragmentInteractionListener mListener;
 
     @Override

@@ -1,15 +1,18 @@
 package com.sz.notouchpass.initial;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.initial.interfaces.InitialView;
 import com.sz.notouchpass.initial.interfaces.Interactor;
 import com.sz.notouchpass.initial.interfaces.Presenter;
 import com.sz.notouchpass.parcelable.TeamsPrediction;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,42 +22,52 @@ public class InitialPresenter implements
         View.OnClickListener {
 
     private InitialView view;
-    private Interactor initialnteractor;
+    private Interactor initialInteractor;
     private Resources resources;
+    private Context ctx;
     private EditText team1Input;
     private EditText team2Input;
     private Button predictionBtn;
+    private ProgressBar progressBar;
 
-    public InitialPresenter(InitialView view, Interactor initialnteractor) {
+    public InitialPresenter(InitialView view, Interactor initialInteractor) {
         this.view = view;
-        this.initialnteractor = initialnteractor;
+        this.initialInteractor = initialInteractor;
         this.resources = view.getResources();
+        this.ctx = ((InitialActivity) view).getApplicationContext();
 
         team1Input = ((InitialActivity) view).findViewById(R.id.inputTeam1);
         team2Input = ((InitialActivity) view).findViewById(R.id.inputTeam2);
         predictionBtn = ((InitialActivity) view).findViewById(R.id.btnGetPrediction);
+        progressBar = ((InitialActivity) view).findViewById(R.id.progressBar);
 
         predictionBtn.setOnClickListener(this);
     }
 
     public void fetchPrediction() {
-        initialnteractor.request(getQueryString(), this);
+        predictionBtn.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+
+        initialInteractor.request(getQueryString(), this);
     }
 
     public void clearDisposables() {
-        initialnteractor.dispose();
+        initialInteractor.dispose();
     }
 
     @Override
     public void onRequestError(Throwable throwable) {
         predictionBtn.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void onRequestSuccess(String response) {
+        progressBar.setVisibility(View.GONE);
+        predictionBtn.setVisibility(View.VISIBLE);
+
         try {
             JSONObject responseData = new JSONObject(response).getJSONObject("data");
-
             String team1Name = team1Input.getText().toString();
             String team2Name = team2Input.getText().toString();
             String rates = responseData
@@ -64,7 +77,7 @@ public class InitialPresenter implements
 
             view.toRivalryActivity(new TeamsPrediction(team1Name, team2Name, rates));
         } catch (JSONException e) {
-            e.printStackTrace();
+            Toast.makeText(ctx, "Failed to find history", Toast.LENGTH_LONG).show();
         }
     }
 

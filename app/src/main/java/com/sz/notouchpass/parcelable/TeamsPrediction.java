@@ -44,14 +44,14 @@ public class TeamsPrediction implements Parcelable {
     }
 
     public static final Parcelable.Creator<TeamsPrediction> CREATOR
-            = new Parcelable.Creator<TeamsPrediction>() {
-        public TeamsPrediction createFromParcel(Parcel in) {
-            return new TeamsPrediction(in);
-        }
+        = new Parcelable.Creator<TeamsPrediction>() {
+            public TeamsPrediction createFromParcel(Parcel in) {
+                return new TeamsPrediction(in);
+            }
 
-        public TeamsPrediction[] newArray(int size) {
-            return new TeamsPrediction[size];
-        }
+            public TeamsPrediction[] newArray(int size) {
+                return new TeamsPrediction[size];
+            }
     };
 
 }

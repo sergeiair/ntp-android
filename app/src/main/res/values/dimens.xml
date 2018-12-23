@@ -1,4 +1,6 @@
 <resources>
+    <dimen name="ultra_margin">48dp</dimen>
+    <dimen name="huge_margin">32dp</dimen>
     <dimen name="big_margin">24dp</dimen>
     <dimen name="mid_margin">16dp</dimen>
     <dimen name="small_margin">8dp</dimen>
