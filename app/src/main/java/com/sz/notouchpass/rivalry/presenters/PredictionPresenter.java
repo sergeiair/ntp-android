@@ -89,7 +89,7 @@ public class PredictionPresenter implements Presenter {
             drawChartView.setMinimumHeight((int) chartHeight);
 
             new PieChartBuilder(winChartView, winEntries, getWinColors())
-                .setText("WIN / LOSS", 1.2f, Color.BLACK)
+                .setText("Win / Loss", 1.1f, Color.BLACK)
                 .decoratePieView(3f, 2f, 40f)
                 .decoratePieContent(16f, Color.WHITE)
                 .decorateLegend(
@@ -100,7 +100,7 @@ public class PredictionPresenter implements Presenter {
                 .complete();
 
             new PieChartBuilder(drawChartView, drawEntries, getDrawColors())
-                .setText("DRAW", 1.5f, Color.BLACK)
+                .setText("Draw", 1.4f, Color.BLACK)
                 .decoratePieView(3f, 2f, 40f)
                 .decoratePieContent(16f, Color.WHITE)
                 .decorateLegend(
@@ -115,8 +115,8 @@ public class PredictionPresenter implements Presenter {
     public ArrayList<Integer> getWinColors() {
         return new ArrayList<Integer>(
             Arrays.asList(
-                Color.rgb(163, 122, 116),
-                Color.rgb(228, 146, 115)
+                Color.rgb(226, 123, 86),
+                Color.rgb(92, 70, 66)
             )
         );
     }
@@ -125,8 +125,8 @@ public class PredictionPresenter implements Presenter {
     public ArrayList<Integer> getDrawColors() {
         return new ArrayList<Integer>(
             Arrays.asList(
-                Color.rgb(92, 70, 66),
-                Color.rgb(230, 170, 104)
+                Color.rgb(87, 167, 115),
+                Color.rgb(52, 75, 65)
             )
         );
     }

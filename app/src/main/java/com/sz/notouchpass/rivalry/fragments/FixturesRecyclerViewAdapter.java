@@ -43,7 +43,7 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
             Date parsedDate = sdf.parse(mValues.get(position).scheduleDate);
             String stadiumName = mValues.get(position).stadium;
             String stadiumImageName = stadiumName.replace(" ", "").toLowerCase();
-            String imagePath = "android.resource://com.sz.notouchpass/drawable/";
+            String imagePath = "android.resource://com.sz.notouchpass/raw/";
             String formattedDate = new SimpleDateFormat("yyyy-MMM-dd", Locale.ENGLISH)
                 .format(parsedDate)
                 .replace("-", "\n\r");
