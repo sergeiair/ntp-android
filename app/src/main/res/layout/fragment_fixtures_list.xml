@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:scrollbars="none"
     android:background="@color/colorLightestGrey"
+    android:paddingBottom="60dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.sz.notouchpass.rivalry.fragments.FixturesFragment" >
 </android.support.v7.widget.RecyclerView>

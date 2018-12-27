@@ -4,7 +4,6 @@
     <string name="title_dashboard">Fixtures</string>
     <string name="title_notifications">Customize</string>
     <string name="title_vs">VS</string>
-    <string name="title_activity_initial">Who are the rivals?</string>
     <string name="title_activity_rivalry">RivalryActivity</string>
     <string name="title_select_team">Select team</string>
     <string name="title_new_coach">New coach to join recently</string>
@@ -13,8 +12,7 @@
     <string name="title_team_motivation">Team motivation</string>
     <string name="title_key_strikers_form">Key strikers form</string>
 
-    <string name="input_team1">Home team</string>
-    <string name="input_team2">Away team</string>
+    <string name="input_teams">Select home and away teams</string>
 
     <string name="buttons_search">Search</string>
     <string name="buttons_calculate">Recalculate</string>

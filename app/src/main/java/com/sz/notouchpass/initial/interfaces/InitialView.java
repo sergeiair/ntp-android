@@ -9,6 +9,5 @@ public interface InitialView {
     Resources getResources();
 
     void toRivalryActivity(Parcelable data);
-
 }
 

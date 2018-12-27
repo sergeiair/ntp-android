@@ -4,70 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/initial"
-    android:padding="@dimen/huge_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.sz.notouchpass.initial.InitialActivity"
     tools:showIn="@layout/activity_initial">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/initial"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="255dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="@dimen/ultra_margin"
+        android:paddingBottom="@dimen/mid_margin"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/mid_margin"
-            android:text="Put home and away teams to continue"
+            android:text="@string/input_teams"
             android:textAlignment="center"
             android:textColor="@color/colorYellow" />
 
-        <EditText
+        <Spinner
             android:id="@+id/inputTeam1"
+            android:tag="team1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginTop="@dimen/mid_margin"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/colorLightestTransparent"
+            android:entries="@array/teamsItems"
+            android:gravity="center"
             android:padding="@dimen/mid_margin"
-            android:background="@drawable/underline_white"
-            android:hint="@string/input_team1"
-            android:inputType="text"
-            android:textColor="@color/colorLightest"
-            android:text="Real Madrid"
+            android:singleLine="true"
             android:textAlignment="center"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread_inside" />
-
-        <EditText
-            android:id="@+id/inputTeam2"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_marginEnd="@dimen/small_margin"
-            android:layout_marginBottom="@dimen/huge_margin"
-            android:background="@android:color/transparent"
-            android:hint="@string/input_team2"
-            android:inputType="text"
-            android:padding="@dimen/mid_margin"
-            android:text="Barcelona"
-            android:textAlignment="center"
-            android:textColor="@color/colorLightest"
-            app:layout_constraintBottom_toTopOf="@+id/btnGetPrediction"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/inputTeam2"
+            android:tag="team2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/micro_margin"
+            android:layout_marginBottom="@dimen/ultra_margin"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/colorLightestTransparent"
+            android:entries="@array/teamsItems"
+            android:gravity="center"
+            android:padding="@dimen/mid_margin"
+            android:singleLine="true"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/btnGetPrediction"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="teamsItems">
+        <item>Barcelona</item>
+        <item>Real Madrid</item>
+        <item>Liverpool</item>
+    </string-array>
+</resources>

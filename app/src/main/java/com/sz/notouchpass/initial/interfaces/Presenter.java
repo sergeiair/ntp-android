@@ -5,6 +5,12 @@ public interface Presenter {
 
     void clearDisposables();
 
+    void onProgressStart();
+
+    void onProgressDone();
+
+    boolean searchAllowed();
+
     String getQueryString();
 }
 
