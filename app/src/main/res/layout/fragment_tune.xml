@@ -4,7 +4,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorLightestGrey"
+    android:background="@color/colorLightest"
     tools:context="com.sz.notouchpass.rivalry.fragments.TuneFragment">
 
     <TextView
@@ -78,6 +78,8 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:max="10"
+        android:splitTrack="false"
+        android:thumb="@drawable/seek_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/missingPlayersLabel" />
@@ -104,6 +106,8 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:max="10"
+        android:splitTrack="false"
+        android:thumb="@drawable/seek_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/motivationLabel" />
@@ -130,6 +134,8 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:max="10"
+        android:splitTrack="false"
+        android:thumb="@drawable/seek_circle"
         android:textColor="@color/colorPie3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +149,7 @@
         android:layout_marginTop="@dimen/huge_margin"
         android:layout_marginEnd="@dimen/mid_margin"
         android:textColor="@color/colorPie3"
-        android:text="@string/title_bookmakers_win"
+        android:text="@string/title_believe_win"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strikersBar" />
@@ -154,7 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/big_margin"
         android:layout_marginTop="@dimen/big_margin"
-        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/mid_margin"
         android:layout_marginBottom="@dimen/huge_margin"
         android:textColor="@color/colorPie3"
         android:text="@string/title_new_coach"

@@ -7,15 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.rivalry.fragments.FixturesFragment;
+import com.sz.notouchpass.rivalry.fragments.InfoFragment;
 import com.sz.notouchpass.rivalry.fragments.PredictionFragment;
 import com.sz.notouchpass.rivalry.fragments.TuneFragment;
 import com.sz.notouchpass.rivalry.interactors.FixturesInteractor;
-import com.sz.notouchpass.rivalry.interactors.PredictionInteractor;
 import com.sz.notouchpass.rivalry.interactors.TuneInteractor;
 import com.sz.notouchpass.rivalry.interfaces.activity.RivalryView;
 import com.sz.notouchpass.rivalry.presenters.FixturesPresenter;
@@ -40,16 +39,21 @@ public class RivalryActivity extends FragmentActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_prediction:
                     setFragment(new PredictionFragment());
 
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_fixtures:
                     setFragment(new FixturesFragment());
 
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_customize:
                     setFragment(new TuneFragment());
+
+                    return true;
+
+                case R.id.navigation_info:
+                    setFragment(new InfoFragment());
 
                     return true;
             }
@@ -64,12 +68,13 @@ public class RivalryActivity extends FragmentActivity implements
 
         Intent intent = getIntent();
         BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         extrasBd = intent.getExtras();
         fm = getFragmentManager();
 
         setFragment(new PredictionFragment());
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_prediction);
     }
 
 

@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="teamsItems">
+        <item>Atl Madrid</item>
+        <item>Arsenal</item>
         <item>Barcelona</item>
-        <item>Real Madrid</item>
+        <item>B Dortmund</item>
+        <item>B Leverkusen</item>
+        <item>B Munich</item>
+        <item>Benfica</item>
+        <item>Bate Borisov</item>
+        <item>Chelsea</item>
+        <item>Celta Vigo</item>
+        <item>Dynamo Kiev</item>
+        <item>Inter</item>
+        <item>Juventus</item>
         <item>Liverpool</item>
+        <item>Lyon</item>
+        <item>Man Utd</item>
+        <item>Man City</item>
+        <item>Milan</item>
+        <item>Napoli</item>
+        <item>Porto</item>
+        <item>Paris St-G.</item>
+        <item>Real Madrid</item>
+        <item>Roma</item>
+        <item>Sevilla</item>
+        <item>Schalke</item>
+        <item>Sporting</item>
+        <item>Shakhtar</item>
+        <item>Tottenham</item>
+        <item>Valencia</item>
     </string-array>
 </resources>

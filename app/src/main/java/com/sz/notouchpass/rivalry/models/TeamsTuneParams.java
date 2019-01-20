@@ -7,7 +7,7 @@ public class TeamsTuneParams {
     public static TuneParams team2 = new TuneParams();
 
     public static class TuneParams {
-        public boolean bookmakersOnWin = true;
+        public boolean bookmakersOnWin = false;
 
         public boolean newCoach = false;
 

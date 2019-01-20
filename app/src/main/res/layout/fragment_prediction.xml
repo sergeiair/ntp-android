@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorGhost"
+    android:background="@color/colorLightest"
     tools:context="com.sz.notouchpass.rivalry.fragments.PredictionFragment">
         <LinearLayout
             android:paddingTop="20dp"

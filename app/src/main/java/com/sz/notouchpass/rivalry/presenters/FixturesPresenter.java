@@ -56,6 +56,8 @@ public class FixturesPresenter implements
 
     @Override
     public void onRequestSuccess(String response) {
+        Fixtures.clearCollection();
+
         try {
             JSONArray fixturesArray = new JSONObject(response)
                 .getJSONObject("data")

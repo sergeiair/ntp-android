@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/pie"
-        android:title="@string/title_home" />
+        <item
+            android:id="@+id/navigation_prediction"
+            android:icon="@drawable/pie"
+            android:title="@string/title_home"
+            app:showAsAction="always"/>
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/list"
-        android:title="@string/title_dashboard" />
+        <item
+            android:id="@+id/navigation_fixtures"
+            android:icon="@drawable/list"
+            android:title="@string/title_dashboard"
+            app:showAsAction="always"/>
 
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/settings"
-        android:title="@string/title_notifications" />
+        <item
+            android:id="@+id/navigation_customize"
+            android:icon="@drawable/settings"
+            android:title="@string/title_customize"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id="@+id/navigation_info"
+            android:icon="@drawable/info"
+            android:title="@string/title_info"
+            app:showAsAction="ifRoom"/>
 
 </menu>

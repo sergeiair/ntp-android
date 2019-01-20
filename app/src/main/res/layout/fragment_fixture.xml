@@ -88,7 +88,7 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:textColor="@color/colorPie2"
+            android:textColor="@color/colorPie4"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

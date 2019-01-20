@@ -15,10 +15,13 @@ public interface Presenter {
 
     void renderCharts(
         ArrayList<PieEntry> winEntries,
-        ArrayList<PieEntry> drawEntries
+        ArrayList<PieEntry> drawEntries,
+        boolean isCustomized
     );
 
-    ArrayList<Integer> getWinColors();
+    int getCalculatedDrawChance(int team1DrawRate, int team2DrawRate);
 
-    ArrayList<Integer> getDrawColors();
+    ArrayList<Integer> getWinColors(boolean isCustomized);
+
+    ArrayList<Integer> getDrawColors(boolean isCustomized);
 }

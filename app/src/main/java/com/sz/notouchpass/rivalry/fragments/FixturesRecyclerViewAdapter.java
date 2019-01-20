@@ -42,7 +42,7 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
 
             Date parsedDate = sdf.parse(mValues.get(position).scheduleDate);
             String stadiumName = mValues.get(position).stadium;
-            String stadiumImageName = stadiumName.replace(" ", "").toLowerCase();
+            String stadiumImageName = stadiumName.replaceAll("[^0-9a-zA-Z]", "").toLowerCase();
             String imagePath = "android.resource://com.sz.notouchpass/raw/";
             String formattedDate = new SimpleDateFormat("yyyy-MMM-dd", Locale.ENGLISH)
                 .format(parsedDate)
@@ -54,7 +54,7 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<FixturesRe
 
             holder.mStadImageView.setImageURI(Uri.parse(imagePath + stadiumImageName));
             holder.mDateView.setText(formattedDate);
-            holder.mStadNameView.setText(stadiumName);
+            holder.mStadNameView.setText(!stadiumName.equals("unknown") ? stadiumName : "Unknown stadium");
             holder.mTeamsView.setText(team1 + " : " + team2);
         } catch (Exception e) {
             Log.e("SetFixtureContent", e.getMessage());

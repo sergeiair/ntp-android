@@ -19,9 +19,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginBottom="@dimen/ultra_margin"
-        android:paddingBottom="@dimen/mid_margin"
+        android:layout_marginBottom="@dimen/big_margin"
+        android:background="@android:color/transparent"
         android:orientation="vertical"
+        android:paddingBottom="@dimen/mid_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -30,42 +31,55 @@
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/input_teams"
-            android:textAlignment="center"
-            android:textColor="@color/colorYellow" />
+            android:layout_marginEnd="@dimen/mid_margin"
+            android:text="@string/input_team_1"
+            android:textAlignment="textEnd"
+            android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/inputTeam1"
-            android:tag="team1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mid_margin"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:background="@color/colorLightestTransparent"
+            android:layout_marginStart="@dimen/mid_margin"
+            android:layout_marginTop="@dimen/micro_margin"
+            android:layout_marginEnd="@dimen/mid_margin"
+            android:background="@drawable/input_rounded"
             android:entries="@array/teamsItems"
             android:gravity="center"
+            android:elevation="1dp"
             android:padding="@dimen/mid_margin"
             android:singleLine="true"
+            android:tag="team1"
             android:textAlignment="center"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/inputTeam2"
-            android:tag="team2"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mid_margin"
+            android:layout_marginTop="@dimen/mid_margin"
+            android:text="@string/input_team_2"
+            android:textAlignment="viewStart"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/inputTeam2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mid_margin"
             android:layout_marginTop="@dimen/micro_margin"
+            android:layout_marginEnd="@dimen/mid_margin"
             android:layout_marginBottom="@dimen/ultra_margin"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:background="@color/colorLightestTransparent"
+            android:background="@drawable/input_rounded"
             android:entries="@array/teamsItems"
             android:gravity="center"
+            android:elevation="1dp"
             android:padding="@dimen/mid_margin"
             android:singleLine="true"
+            android:tag="team2"
             android:textAlignment="center" />
 
         <Button
@@ -74,11 +88,11 @@
             android:layout_height="50dp"
             android:layout_marginStart="@dimen/huge_margin"
             android:layout_marginEnd="@dimen/huge_margin"
-            android:background="@drawable/button_rounded_yellow"
-            android:elevation="4dp"
+            android:background="@drawable/button_rounded_green"
+            android:elevation="1dp"
             android:text="@string/buttons_search"
             android:textAlignment="center"
-            android:textColor="@color/colorYellow"
+            android:textColor="@color/colorLightest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputTeam2" />
@@ -89,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="@color/colorYellow"
+            android:indeterminateTint="@color/colorDarkerGreen"
             android:indeterminateTintMode="src_atop"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
