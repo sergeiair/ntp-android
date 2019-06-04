@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".rivalry.RivalryActivity"
-            android:label="@string/title_activity_rivalry"
+            android:label=А"@string/title_activity_rivalry"
             android:screenOrientation="portrait" />
     </application>
 

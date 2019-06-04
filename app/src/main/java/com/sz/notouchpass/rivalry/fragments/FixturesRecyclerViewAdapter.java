@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.sz.notouchpass.R;
 import com.sz.notouchpass.rivalry.models.Fixtures.FixtureItem;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
